@@ -1,0 +1,338 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Ship Detector Co.</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+                        
+                        <!-- Nav brand -->
+                        <a href="http://127.0.0.1:8000/" class="nav-brand"><img src="{% static 'img/core-img/logo2.png' %}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+                                    <li><a href="{% url 'methods' %}">Methods</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li>Hello, {{ request.user }}</li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({% static 'img/bg-img/ship-4.jpg' %});">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Methods</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Elements Area Start ##### -->
+    <section class="elements-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+
+                <!-- ========== Progress Bars & Accordions ========== -->
+                <div class="col-12">
+                    <div class="elements-title mb-50">
+                        <h2>Types of CNN</h2>
+                    </div>
+                </div>
+
+                <!-- ##### Accordians ##### -->
+                <div class="col-12 col-lg-6">
+                    <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                        <!-- single accordian area -->
+                        <div class="panel single-accordion">
+                            <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">R-CNN region based convolutional neural network
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a></h6>
+                            <div id="collapseOne" class="accordion-content collapse show">
+                                <p>
+                                    Mask R-CNN is selected for this project because it can generate high-quality segmentation mask for each object. Its mask prediction branche is added in parallel to Faster R-CNN's bounding box and image class prediction.</p>
+                            </div>
+                        </div>
+                        <!-- single accordian area -->
+                        <div class="panel single-accordion">
+                            <h6>
+                                <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">CNN convolutional neural network
+                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                        </a>
+                            </h6>
+                            <div id="collapseTwo" class="accordion-content collapse">
+                                <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                            </div>
+                        </div>
+                        <!-- single accordian area -->
+                        <div class="panel single-accordion">
+                            <h6>
+                                <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">YOLO You Only Look Once
+                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                            </h6>
+                            <div id="collapseThree" class="accordion-content collapse">
+                                <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- ========== Loaders ========== -->
+                <div class="col-12">
+                    <div class="elements-title mb-50">
+                        <div class="line"></div>
+                        <h2>Loaders</h2>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <!-- Skills Area Start -->
+                    <div class="our-skills-area">
+                        <div class="row">
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div class="circle" data-value="1" id="c1">
+                                        <div class="skills-text">
+                                            <span>100%</span>
+                                            <p>Projects Completed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div class="circle" data-value="0.95" id="c2">
+                                        <div class="skills-text">
+                                            <span>95%</span>
+                                            <p>Branding</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div class="circle" data-value="0.70" id="c3">
+                                        <div class="skills-text">
+                                            <span>70%</span>
+                                            <p>Unique Projects</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div class="circle" data-value="0.80" id="c4">
+                                        <div class="skills-text">
+                                            <span>80%</span>
+                                            <p>Logo’s</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== Milestones ========== -->
+                <div class="col-12">
+                    <div class="elements-title mb-50">
+                        <div class="line"></div>
+                        <h2>Milestone</h2>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="pixel-cool-facts-area">
+                        <div class="row">
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-icon">
+                                        <img src="{% static 'img/core-img/m1.png' %}" alt="">
+                                    </div>
+                                    <div class="scf-text">
+                                        <h2><span class="counter">3.451</span></h2>
+                                        <h6>Projects Completed</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-icon">
+                                        <img src="{% static 'img/core-img/m2.png' %}" alt="">
+                                    </div>
+                                    <div class="scf-text">
+                                        <h2><span class="counter">235.025</span></h2>
+                                        <h6>PSD Files</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-icon">
+                                        <img src="{% static 'img/core-img/m3.png' %}" alt="">
+                                    </div>
+                                    <div class="scf-text">
+                                        <h2><span class="counter">4021</span></h2>
+                                        <h6>Presentations Made</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-icon">
+                                        <img src="{% static 'img/core-img/m4.png' %}" alt="">
+                                    </div>
+                                    <div class="scf-text">
+                                        <h2><span class="counter">11.236</span></h2>
+                                        <h6>Deadlines Achived</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Elements Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-footer-widget mb-100">
+                        <!-- Footer Logo -->
+                        <a href="http://127.0.0.1:8000/" class="footer-logo"><img src="{% static 'img/core-img/logo1.png' %}" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-100">
+                                <h5 class="widget-title">Address</h5>
+                                <p>Sinhgad College of Engineering <br> Vadgaon Bk., Pune MH, 411041</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-100">
+                                <h5 class="widget-title">Support</h5>
+                                <p><i class="fa fa-phone"></i> <br> +91 80070 21930</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>

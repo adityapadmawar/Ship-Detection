@@ -1,0 +1,199 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Ship Detector Co.</title>
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'upload.css' %}">
+
+</head>
+
+<body>
+    <style>
+        .hello-msg{
+            font-size: 18px;
+            color: rgb(228, 122, 23);
+
+        }
+    </style>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+                        
+                        <!-- Nav brand -->
+                        <a href="http://127.0.0.1:8000/" class="nav-brand"><img src="{% static 'img/core-img/logo2.png' %}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+                                    <li><a href="{% url 'methods' %}">Methods</a></li>
+                                    <li class="hello-msg">Hello, {{ request.user }}</li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slideshow owl-carousel">
+
+            <!-- ##### Upload Area Start ##### -->
+
+            <div class="single-slide">
+                <!-- Background Image-->
+                <div class="slide-bg-img bg-img" style="background-image: url({% static 'img/bg-img/ship-3.jpg' %});"></div>
+                
+                
+                
+                <!--Upload Button Start-->
+                
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+
+
+                                    <h1 style="color:rgb(90, 197, 170);">Detect</h1>
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <button class="btn btn1" type="submit">Detect Ships</button>
+                                    </form>
+
+                                    <h1 style="color:rgb(90, 197, 170);">View Detected Ships</h1>
+                                    <form action="http://127.0.0.1:8000/image/">
+                                        <button class="btn btn1" type="submit">Checkout</button>
+                                    </form>
+
+
+                                    <h1 style="color:rgb(90, 197, 170);">Thank you for Using our Service</h1>
+                                    <form action="http://127.0.0.1:8000/upload/">
+                                        <button class="btn btn1" type="submit">Go Back</button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <!--Upload Button End-->
+
+
+
+            </div>
+            <!-- ##### Upload Area End ##### -->
+
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+        <div class="row justify-content-between">
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-md-3">
+        <div class="single-footer-widget mb-100">
+            <!-- Footer Logo -->
+            <a href="http://127.0.0.1:8000/" class="footer-logo"><img src="{% static 'img/core-img/logo1.png' %}" alt=""></a>
+        </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+        <div class="row">
+            <!-- Single Footer Widget -->
+            <div class="col-sm-4">
+                <div class="single-footer-widget mb-100">
+                    <h5 class="widget-title">Address</h5>
+                    <p>Sinhgad College of Engineering <br> Vadgaon Bk., Pune MH, 411041</p>
+                </div>
+            </div>
+
+            <!-- Single Footer Widget -->
+            <div class="col-sm-4">
+                <div class="single-footer-widget mb-100">
+                    <h5 class="widget-title">Support</h5>
+                    <p><i class="fa fa-phone"></i> <br> +91 80070 21930</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+<!-- Popper js -->
+<script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+<!-- All Plugins js -->
+<script src="{% static 'js/plugins/plugins.js' %}"></script>
+<!-- Active js -->
+<script src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>
